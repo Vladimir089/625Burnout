@@ -9,7 +9,6 @@
 
 import UIKit
 
-var racers: [Race] = []
 
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
@@ -69,9 +68,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
                
                switch tabBarController.selectedIndex {
                case 0:
-                   let newPlantVC = NewRaceViewController()
-                   newPlantVC.delegate = homeVC.self
-                   self.present(newPlantVC, animated: true, completion: nil)
+                   homeVC.createRace()
                case 1:
                    print(1)
                   // let newEqVC = NewOrEditEquimpentViewController()

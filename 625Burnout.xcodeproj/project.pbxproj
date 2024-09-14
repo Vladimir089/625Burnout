@@ -20,6 +20,7 @@
 		15811A832C9487E600787F9A /* RaceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A822C9487E600787F9A /* RaceModel.swift */; };
 		15811A852C94945A00787F9A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A842C94945A00787F9A /* NewRaceViewController.swift */; };
 		15811A882C94977300787F9A /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A872C94977300787F9A /* BackButton.swift */; };
+		15811A8A2C95DBBE00787F9A /* AddAndEditTotalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		15811A822C9487E600787F9A /* RaceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RaceModel.swift; sourceTree = "<group>"; };
 		15811A842C94945A00787F9A /* NewRaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
 		15811A872C94977300787F9A /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
+		15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditTotalsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				15811A802C94823200787F9A /* HomeViewController.swift */,
 				15811A822C9487E600787F9A /* RaceModel.swift */,
 				15811A842C94945A00787F9A /* NewRaceViewController.swift */,
+				15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -217,6 +220,7 @@
 				15811A852C94945A00787F9A /* NewRaceViewController.swift in Sources */,
 				15811A5F2C9470EA00787F9A /* AppDelegate.swift in Sources */,
 				15811A612C9470EA00787F9A /* SceneDelegate.swift in Sources */,
+				15811A8A2C95DBBE00787F9A /* AddAndEditTotalsViewController.swift in Sources */,
 				15811A882C94977300787F9A /* BackButton.swift in Sources */,
 				15811A7E2C94813000787F9A /* TabBarViewController.swift in Sources */,
 				15811A7B2C9473AD00787F9A /* OnbUserViewController.swift in Sources */,

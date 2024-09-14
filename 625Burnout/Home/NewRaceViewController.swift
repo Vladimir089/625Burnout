@@ -6,13 +6,15 @@
 //
 
 import UIKit
+import Combine
 
 class NewRaceViewController: UIViewController, UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
-    weak var delegate: HomeViewControllerDelegate?
-    
     private let goBackButton = BackButton()
     private lazy var saveButton = UIButton()
+    var racersNew: [Race] = []
+
+    var raceCreated: PassthroughSubject<[Race], Never>?
     
     //main
     private lazy var imageView = UIImageView()
@@ -145,7 +147,17 @@ class NewRaceViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     @objc func saveRace() {
-        //
+        
+        let image: Data = imageView.image?.jpegData(compressionQuality: 1) ?? Data()
+        let trackName:String = trackNameTextField.text ?? ""
+        let location: String = locationTextField.text ?? ""
+        let date: String = dateTextField.text ?? ""
+        
+        let race = Race(Image: image, trackName: trackName, location: location, date: date, totals: [])
+        racersNew.append(race)
+        print(racersNew)
+        raceCreated?.send(racersNew)
+        close()
     }
     
     func checkButton() {
@@ -214,7 +226,6 @@ class NewRaceViewController: UIViewController, UIImagePickerControllerDelegate ,
     }
     
     @objc func close() {
-        delegate = nil
         self.dismiss(animated: true)
     }
 
