@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
         racers = loadAthleteArrFromFile() ?? []
         createInterface()
         checkArray()
+
         subscribe()
     }
     
@@ -33,6 +34,7 @@ class HomeViewController: UIViewController {
         cancellable = raceCreated
             .sink(receiveValue: { newRace in
                 self.racers = newRace
+                print(2)
                 do {
                     let data = try JSONEncoder().encode(self.racers)
                     try self.saveAthleteArrToFile(data: data)

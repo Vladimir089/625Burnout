@@ -155,7 +155,6 @@ class NewRaceViewController: UIViewController, UIImagePickerControllerDelegate ,
         
         let race = Race(Image: image, trackName: trackName, location: location, date: date, totals: [])
         racersNew.append(race)
-        print(racersNew)
         raceCreated?.send(racersNew)
         close()
     }
