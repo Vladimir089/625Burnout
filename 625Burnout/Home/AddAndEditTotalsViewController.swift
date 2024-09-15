@@ -7,14 +7,16 @@
 
 import UIKit
 import Combine
+import CombineCocoa
 
 class AddAndEditTotalsViewController: UIViewController {
     
     //publishers
     var oldRacersPublisher: PassthroughSubject<[Race], Never>?
     var newRacesPublisher = PassthroughSubject<[Total], Never>()
-    var cancellables = [AnyCancellable]()
     
+    var cancellable = [AnyCancellable]()
+
     //other
     var racersOld: [Race]?
     var indexEditRace = 0
@@ -41,11 +43,16 @@ class AddAndEditTotalsViewController: UIViewController {
             .sink(receiveValue: { total in
                 self.racersOld?[self.indexEditRace].totals = total
                 self.collection.reloadData()
+                
             })
-            .store(in: &cancellables)
+            .store(in: &cancellable)
     }
     
-
+    
+    deinit {
+        cancellable.forEach({$0.cancel()})
+    }
+    
     
     func checkIsNew(editable: Bool) {
         if editable {
@@ -101,7 +108,11 @@ class AddAndEditTotalsViewController: UIViewController {
             make.width.equalTo(60)
             make.height.equalTo(22)
         }
-        backButton.addTarget(self, action: #selector(closeVC), for: .touchUpInside)
+        backButton.tapPublisher
+            .sink { _ in
+                self.dismiss(animated: true)
+            }
+            .store(in: &cancellable)
         
         editButton = {
             let button = UIButton(type: .system)
@@ -114,7 +125,13 @@ class AddAndEditTotalsViewController: UIViewController {
             make.right.equalToSuperview().inset(15)
             make.centerY.equalTo(topLabel)
         }
-        editButton.addTarget(self, action: #selector(editTabbed), for: .touchUpInside)
+        editButton.tapPublisher
+            .sink { _ in
+                DispatchQueue.main.async {
+                    self.checkIsNew(editable: true)
+                }
+            }
+            .store(in: &cancellable)
         
         collection = {
             let layout = UICollectionViewFlowLayout()
@@ -143,30 +160,29 @@ class AddAndEditTotalsViewController: UIViewController {
             button.setTitleColor(.black, for: .normal)
             return button
         }()
+        
+        saveButton.tapPublisher
+            .sink { [self] tap in
+                oldRacersPublisher?.send(racersOld ?? [])
+                checkIsNew(editable: false)
+            }
+            .store(in: &cancellable)
+        
         view.addSubview(saveButton)
         saveButton.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(15)
             make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.height.equalTo(56)
         }
-        saveButton.addTarget(self, action: #selector(saveRace), for: .touchUpInside)
+
     }
     
     
-    @objc func editTabbed() {
-        checkIsNew(editable: true)
-    }
+
     
     
-    @objc func saveRace() {
-        oldRacersPublisher?.send(racersOld ?? [])
-        checkIsNew(editable: false)
-    }
     
-    
-    @objc func closeVC() {
-        self.dismiss(animated: true)
-    }
+   
     
     
     func createAndEditTotal(index: Int?, isNew: Bool) {

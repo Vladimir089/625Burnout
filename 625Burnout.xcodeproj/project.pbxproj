@@ -21,6 +21,7 @@
 		15811A852C94945A00787F9A /* NewRaceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A842C94945A00787F9A /* NewRaceViewController.swift */; };
 		15811A882C94977300787F9A /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A872C94977300787F9A /* BackButton.swift */; };
 		15811A8A2C95DBBE00787F9A /* AddAndEditTotalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */; };
+		15811A8D2C97450B00787F9A /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 15811A8C2C97450B00787F9A /* CombineCocoa */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15811A8D2C97450B00787F9A /* CombineCocoa in Frameworks */,
 				15811A782C9471B200787F9A /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +158,7 @@
 			name = 625Burnout;
 			packageProductDependencies = (
 				15811A772C9471B200787F9A /* SnapKit */,
+				15811A8C2C97450B00787F9A /* CombineCocoa */,
 			);
 			productName = 625Burnout;
 			productReference = 15811A5B2C9470EA00787F9A /* 625Burnout.app */;
@@ -187,6 +190,7 @@
 			mainGroup = 15811A522C9470EA00787F9A;
 			packageReferences = (
 				15811A762C9471B200787F9A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				15811A8B2C97450B00787F9A /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 			);
 			productRefGroup = 15811A5C2C9470EA00787F9A /* Products */;
 			projectDirPath = "";
@@ -463,6 +467,14 @@
 				minimumVersion = 5.7.1;
 			};
 		};
+		15811A8B2C97450B00787F9A /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -470,6 +482,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 15811A762C9471B200787F9A /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		15811A8C2C97450B00787F9A /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 15811A8B2C97450B00787F9A /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     lazy var collection = UICollectionView()
     
     var raceCreated = PassthroughSubject<[Race], Never>()
-    var cancellable: AnyCancellable?
+    var cancellable = [AnyCancellable]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,10 +31,10 @@ class HomeViewController: UIViewController {
     }
     
     func subscribe() {
-        cancellable = raceCreated
+        raceCreated
             .sink(receiveValue: { newRace in
                 self.racers = newRace
-                print(2)
+                
                 do {
                     let data = try JSONEncoder().encode(self.racers)
                     try self.saveAthleteArrToFile(data: data)
@@ -43,6 +43,8 @@ class HomeViewController: UIViewController {
                     print("Failed to encode or save athleteArr: \(error)")
                 }
             })
+            .store(in: &cancellable)
+            
             
     }
     
@@ -213,14 +215,6 @@ class HomeViewController: UIViewController {
         self.present(vc, animated: true)
     }
     
-    @objc func createOrOpenTotals(sender: UIButton) {
-        let vc = AddAndEditTotalsViewController()
-        vc.oldRacersPublisher = raceCreated
-        vc.racersOld = racers
-        vc.indexEditRace = sender.tag
-        self.present(vc, animated: true)
-    }
-    
 }
 
 
@@ -320,7 +314,15 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
             make.height.equalTo(44)
             make.right.equalTo(cell.snp.centerX)
         }
-        buttonView.addTarget(self, action: #selector(createOrOpenTotals(sender:)), for: .touchUpInside)
+        buttonView.tapPublisher
+            .sink { [self] _ in
+                let vc = AddAndEditTotalsViewController()
+                vc.oldRacersPublisher = raceCreated
+                vc.racersOld = racers
+                vc.indexEditRace = buttonView.tag
+                self.present(vc, animated: true)
+            }
+            .store(in: &cancellable)
 
         return cell
     }
