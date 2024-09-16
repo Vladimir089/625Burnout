@@ -13,7 +13,7 @@ import UIKit
 class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let homeVC = HomeViewController()
-//    let eqimpVC = EquimpetViewController()
+    let bestVC = BestRacerViewController()
 //    let notesVC = NotesViewController()
     
     let newPlantVC = UIViewController()
@@ -38,8 +38,8 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         homeVC.tabBarItem = plantsTabBarItem
         
         
-        let eqimpTabBarItem = UITabBarItem(title: "", image: .tab2.resize(targetSize: CGSize(width: 23, height: 21)), tag: 1)
-        //eqimpVC.tabBarItem = eqimpTabBarItem
+        let bestRacerVC = UITabBarItem(title: "", image: .tab2.resize(targetSize: CGSize(width: 23, height: 21)), tag: 1)
+        bestVC.tabBarItem = bestRacerVC
         
         let notesTabBarItem = UITabBarItem(title: "", image: .tab3.resize(targetSize: CGSize(width: 23, height: 21)), tag: 2)
         //notesVC.tabBarItem = notesTabBarItem
@@ -59,7 +59,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
 //        plantsVC.eqDelegate = eqimpVC.self
 //        notesVC.eqDelegate = eqimpVC.self
         
-        viewControllers = [homeVC, homeVC, homeVC, newPlantVC]
+        viewControllers = [homeVC, bestVC, homeVC, newPlantVC]
     }
 
     
@@ -71,10 +71,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
                    homeVC.createRace()
                case 1:
                    print(1)
-                  // let newEqVC = NewOrEditEquimpentViewController()
-//                   newEqVC.delegate = eqimpVC.self
-//                   newEqVC.isNew = true
-//                   self.present(newEqVC, animated: true, completion: nil)
+                   bestVC.openEditPage()
                case 2:
                    print(2)
 //                   let newEqVC = NewNoteViewController()

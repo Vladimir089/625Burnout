@@ -22,6 +22,8 @@
 		15811A882C94977300787F9A /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A872C94977300787F9A /* BackButton.swift */; };
 		15811A8A2C95DBBE00787F9A /* AddAndEditTotalsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */; };
 		15811A8D2C97450B00787F9A /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 15811A8C2C97450B00787F9A /* CombineCocoa */; };
+		15811A902C98435600787F9A /* BestRacerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A8F2C98435600787F9A /* BestRacerViewController.swift */; };
+		15811A922C9871E500787F9A /* EditStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A912C9871E500787F9A /* EditStatViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		15811A842C94945A00787F9A /* NewRaceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRaceViewController.swift; sourceTree = "<group>"; };
 		15811A872C94977300787F9A /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditTotalsViewController.swift; sourceTree = "<group>"; };
+		15811A8F2C98435600787F9A /* BestRacerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRacerViewController.swift; sourceTree = "<group>"; };
+		15811A912C9871E500787F9A /* EditStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,7 @@
 		15811A5D2C9470EA00787F9A /* 625Burnout */ = {
 			isa = PBXGroup;
 			children = (
+				15811A8E2C98433F00787F9A /* BestRacerVC */,
 				15811A862C94975B00787F9A /* Components */,
 				15811A7F2C94822800787F9A /* Home */,
 				15811A7C2C94810F00787F9A /* TabBar */,
@@ -138,6 +143,15 @@
 				15811A872C94977300787F9A /* BackButton.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		15811A8E2C98433F00787F9A /* BestRacerVC */ = {
+			isa = PBXGroup;
+			children = (
+				15811A8F2C98435600787F9A /* BestRacerViewController.swift */,
+				15811A912C9871E500787F9A /* EditStatViewController.swift */,
+			);
+			path = BestRacerVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -222,10 +236,12 @@
 				15811A832C9487E600787F9A /* RaceModel.swift in Sources */,
 				15811A752C94715C00787F9A /* LoadViewController.swift in Sources */,
 				15811A852C94945A00787F9A /* NewRaceViewController.swift in Sources */,
+				15811A902C98435600787F9A /* BestRacerViewController.swift in Sources */,
 				15811A5F2C9470EA00787F9A /* AppDelegate.swift in Sources */,
 				15811A612C9470EA00787F9A /* SceneDelegate.swift in Sources */,
 				15811A8A2C95DBBE00787F9A /* AddAndEditTotalsViewController.swift in Sources */,
 				15811A882C94977300787F9A /* BackButton.swift in Sources */,
+				15811A922C9871E500787F9A /* EditStatViewController.swift in Sources */,
 				15811A7E2C94813000787F9A /* TabBarViewController.swift in Sources */,
 				15811A7B2C9473AD00787F9A /* OnbUserViewController.swift in Sources */,
 				15811A812C94823200787F9A /* HomeViewController.swift in Sources */,
