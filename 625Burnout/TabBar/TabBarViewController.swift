@@ -14,7 +14,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
     
     let homeVC = HomeViewController()
     let bestVC = BestRacerViewController()
-//    let notesVC = NotesViewController()
+    let setttingsVC = SettingsViewController()
     
     let newPlantVC = UIViewController()
 
@@ -41,25 +41,15 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
         let bestRacerVC = UITabBarItem(title: "", image: .tab2.resize(targetSize: CGSize(width: 23, height: 21)), tag: 1)
         bestVC.tabBarItem = bestRacerVC
         
-        let notesTabBarItem = UITabBarItem(title: "", image: .tab3.resize(targetSize: CGSize(width: 23, height: 21)), tag: 2)
-        //notesVC.tabBarItem = notesTabBarItem
+        let setttingsItem = UITabBarItem(title: "", image: .tab3.resize(targetSize: CGSize(width: 23, height: 21)), tag: 2)
+        setttingsVC.tabBarItem = setttingsItem
         
         let imageNew = UIImage(named: "addNew")?.resize(targetSize: CGSize(width: 80, height: 80))
         let imageOriginal = imageNew?.withRenderingMode(.alwaysOriginal)
         let newPlantItem = UITabBarItem(title: "", image: imageOriginal, tag: 3)
         newPlantVC.tabBarItem = newPlantItem
         
-//        eqimpVC.delegatePlant = plantsVC.self
-//        notesVC.delegatePlant = plantsVC.self
-//        
-//        
-//        eqimpVC.notesDelegate = notesVC.self
-//        plantsVC.notesDel = notesVC.self
-//        
-//        plantsVC.eqDelegate = eqimpVC.self
-//        notesVC.eqDelegate = eqimpVC.self
-        
-        viewControllers = [homeVC, bestVC, homeVC, newPlantVC]
+        viewControllers = [homeVC, bestVC, setttingsVC, newPlantVC]
     }
 
     
@@ -74,9 +64,6 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
                    bestVC.openEditPage()
                case 2:
                    print(2)
-//                   let newEqVC = NewNoteViewController()
-//                   newEqVC.delegate = notesVC.self
-//                   self.present(newEqVC, animated: true, completion: nil)
                default:
                    break
                }
@@ -85,7 +72,7 @@ class TabBarViewController: UITabBarController, UITabBarControllerDelegate {
                return false
            }
        
-           return true // Для других табов возвращаем true
+           return true
        }
 
 }

@@ -24,6 +24,7 @@
 		15811A8D2C97450B00787F9A /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 15811A8C2C97450B00787F9A /* CombineCocoa */; };
 		15811A902C98435600787F9A /* BestRacerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A8F2C98435600787F9A /* BestRacerViewController.swift */; };
 		15811A922C9871E500787F9A /* EditStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A912C9871E500787F9A /* EditStatViewController.swift */; };
+		15811A952C999D8900787F9A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15811A942C999D8900787F9A /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		15811A892C95DBBE00787F9A /* AddAndEditTotalsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAndEditTotalsViewController.swift; sourceTree = "<group>"; };
 		15811A8F2C98435600787F9A /* BestRacerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestRacerViewController.swift; sourceTree = "<group>"; };
 		15811A912C9871E500787F9A /* EditStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditStatViewController.swift; sourceTree = "<group>"; };
+		15811A942C999D8900787F9A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +80,7 @@
 		15811A5D2C9470EA00787F9A /* 625Burnout */ = {
 			isa = PBXGroup;
 			children = (
+				15811A932C999D7200787F9A /* SettingsVC */,
 				15811A8E2C98433F00787F9A /* BestRacerVC */,
 				15811A862C94975B00787F9A /* Components */,
 				15811A7F2C94822800787F9A /* Home */,
@@ -152,6 +155,14 @@
 				15811A912C9871E500787F9A /* EditStatViewController.swift */,
 			);
 			path = BestRacerVC;
+			sourceTree = "<group>";
+		};
+		15811A932C999D7200787F9A /* SettingsVC */ = {
+			isa = PBXGroup;
+			children = (
+				15811A942C999D8900787F9A /* SettingsViewController.swift */,
+			);
+			path = SettingsVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +254,7 @@
 				15811A882C94977300787F9A /* BackButton.swift in Sources */,
 				15811A922C9871E500787F9A /* EditStatViewController.swift in Sources */,
 				15811A7E2C94813000787F9A /* TabBarViewController.swift in Sources */,
+				15811A952C999D8900787F9A /* SettingsViewController.swift in Sources */,
 				15811A7B2C9473AD00787F9A /* OnbUserViewController.swift in Sources */,
 				15811A812C94823200787F9A /* HomeViewController.swift in Sources */,
 			);
